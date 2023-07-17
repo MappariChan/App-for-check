@@ -1,0 +1,23 @@
+.main-content {
+  width: 1200px;
+  margin-inline: auto;
+}
+
+@media screen and (max-width: 1300px) {
+  .main-content {
+    width: 800px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .main-content {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .main-content {
+    width: auto;
+    margin-inline: 30px;
+  }
+}

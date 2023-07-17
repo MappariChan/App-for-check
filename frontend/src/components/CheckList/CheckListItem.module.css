@@ -1,0 +1,33 @@
+.check {
+  padding-block: 20px;
+  transition: background-color 200ms;
+}
+
+.check:hover {
+  background-color: rgb(244, 244, 244);
+}
+
+.check:not(:last-child) {
+  border-bottom: 1px solid rgb(180, 180, 180);
+}
+
+.title {
+  font-size: 16px;
+  font-weight: normal;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.price {
+  font-size: 20px;
+  font-weight: bold;
+  margin: 0;
+}
+
+.desc {
+  margin: 0;
+  margin-top: 10px;
+  font-weight: 100;
+  color: rgb(99, 99, 99);
+  font-size: 14px;
+}

@@ -1,0 +1,52 @@
+.main-navigation {
+  position: sticky;
+  z-index: 10;
+}
+
+.main-navigation ul {
+  display: flex;
+  list-style: none;
+  padding: 0;
+  width: 1200px;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 1300px) {
+  .main-navigation ul {
+    width: 800px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .main-navigation ul {
+    width: 600px;
+  }
+}
+
+@media screen and (max-width: 650px) {
+  .main-navigation ul {
+    width: auto;
+    margin-inline: 30px;
+  }
+}
+
+.main-navigation li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background-color 200ms;
+}
+
+.main-navigation li:hover {
+  background-color: rgb(244, 244, 244);
+}
+
+.main-navigation a {
+  text-decoration: none;
+  padding: 20px;
+  color: black;
+}
+
+.active {
+  border-bottom: 1px solid rgb(180, 180, 180);
+}
