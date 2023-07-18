@@ -7,6 +7,8 @@ import classes from './AuthentificationModals.module.css'
 const SignInModal = (props) => {
     const [password, setPassword] = useState('')
     const [signInData, setSignInData] = useState('')
+    const [focused, setFocused] = useState(false)
+
 
     const validateSignInData = async (event) => {
         event.preventDefault()
@@ -33,10 +35,21 @@ const SignInModal = (props) => {
         setSignInData(event.target.value)
     }
     return <form onSubmit={validateSignInData} className={classes["submit-form"]}>
-        <h2>Welcome</h2>
-        <TextField type = "text" fullWidth label= "Email or Login" onChange={signUpDataInputHandler} variant='standard'/>
-        <TextField type = "password" fullWidth label='Password' onChange={passwordInputHandler} variant='standard'/>
+        <h2>Welcome Back</h2>
+        <TextField type = "text" fullWidth label= "Email or Login"
+                   onChange={signUpDataInputHandler} variant='standard'/>
+        <TextField sx={{
+            '& .MuiInputLabel-root:after': {
+                color: '#6638dd',
+            },
+            '& .MuiInput-underline:after': {
+                borderBottomColor: '#6638dd',
+            },}}
+                   type = "password" fullWidth label='Password'
+                   onChange={passwordInputHandler} variant='standard'/>
         <Button type = 'submit'>Submit</Button>
+        <p>No account? You can always create a new one <a onClick={props.openSignUpModal}
+                                                          style = {{color: "#6638dd", cursor: "pointer"}}>HERE</a></p>
     </form>
 }
 
