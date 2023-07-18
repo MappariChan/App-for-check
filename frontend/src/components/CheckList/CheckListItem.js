@@ -25,7 +25,7 @@ const CheckListItem = ({ check }) => {
         ReactDOM.createPortal(
           <>
             <Backdrop close={close} />
-            <CheckModal close={close} />
+            <CheckModal close={close} items={check.items} title={check.title} />
           </>,
           document.getElementById("modal")
         )}
