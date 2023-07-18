@@ -1,6 +1,7 @@
 .check {
   padding-block: 20px;
   transition: background-color 200ms;
+  position: relative;
 }
 
 .check:hover {
@@ -30,4 +31,9 @@
   font-weight: 100;
   color: rgb(99, 99, 99);
   font-size: 14px;
+}
+
+.cover {
+  position: absolute;
+  inset: 0;
 }

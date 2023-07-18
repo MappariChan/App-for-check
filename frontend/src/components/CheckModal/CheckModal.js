@@ -1,9 +1,7 @@
-import Backdrop from "../../UI/Backdrop";
-
 import classes from "./CheckModal.module.css";
 
-const CheckModal = () => {
-  return <div className={classes.modal}></div>;
+const CheckModal = ({ close }) => {
+  return <div onClick={close} className={classes.modal}></div>;
 };
 
 export default CheckModal;

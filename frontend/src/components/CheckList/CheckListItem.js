@@ -1,4 +1,4 @@
-import { useState } from "react";
+import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
 import CheckModal from "../CheckModal/CheckModal";
@@ -10,22 +10,22 @@ const CheckListItem = ({ check }) => {
   const [isShown, setIsShown] = useState(false);
 
   const close = () => {
-    console.log("triggered");
     setIsShown(false);
   };
 
   return (
-    <li
-      className={classes.check}
-      onClick={() => {
-        setIsShown(true);
-      }}
-    >
+    <li className={classes.check}>
+      <div
+        className={classes.cover}
+        onClick={() => {
+          setIsShown(true);
+        }}
+      ></div>
       {isShown &&
         ReactDOM.createPortal(
           <>
             <Backdrop close={close} />
-            <CheckModal />
+            <CheckModal close={close} />
           </>,
           document.getElementById("modal")
         )}

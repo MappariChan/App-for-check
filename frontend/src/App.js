@@ -6,17 +6,17 @@ import Checks from "./pages/Checks";
 
 const router = createBrowserRouter([
   {
-    index: "/",
+    path: "/",
     element: <Root />,
     children: [
-      { index: true, element: <Checks /> },
+      { path: "", element: <Checks /> },
       { path: "group", element: <Group /> },
     ],
   },
 ]);
 
-function App() {
+const App = () => {
   return <RouterProvider router={router} />;
-}
+};
 
 export default App;
