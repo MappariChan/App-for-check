@@ -1,4 +1,5 @@
 import ItemList from "../ItemList/ItemList";
+import Button from "../../UI/Button";
 
 import classes from "./CheckModal.module.css";
 
@@ -10,7 +11,9 @@ const CheckModal = ({ close, title, items }) => {
       </header>
       <p>Please select items</p>
       <ItemList items={items} />
-      <div className={classes.actions}></div>
+      <div className={classes.actions}>
+        <Button>Next</Button>
+      </div>
     </div>
   );
 };

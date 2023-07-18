@@ -1,7 +1,15 @@
-const Button = (props) => {
-    return <button onClick={props.onClick} type={props.type}>
-        {props.buttonText}
-    </button>
-}
+import classes from "./Button.module.css";
 
-export default Button
+const Button = (props) => {
+  return (
+    <button
+      onClick={props.onClick}
+      type={props.type}
+      className={classes["submit-button"]}
+    >
+      {props.children}
+    </button>
+  );
+};
+
+export default Button;

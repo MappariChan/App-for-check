@@ -1,5 +1,5 @@
 .check {
-  padding-block: 20px;
+  padding: 20px 5px;
   transition: background-color 200ms;
   position: relative;
 }

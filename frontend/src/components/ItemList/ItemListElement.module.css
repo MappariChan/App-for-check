@@ -16,9 +16,27 @@
 }
 
 .item {
-  padding-block: 15px;
+  padding: 15px 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .item:not(:last-child) {
   border-bottom: 1px dashed black;
+}
+
+.circle {
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #ede9fe;
+  transition: background-color 200ms;
+}
+
+.active {
+  background-color: #6638dd;
 }

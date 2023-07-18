@@ -4,7 +4,7 @@
   left: 50%;
   transform: translate(-50%, -50%);
   background-color: white;
-  padding: 20px;
+  padding: 40px 20px;
   z-index: 100;
   width: 500px;
 }
@@ -31,4 +31,5 @@
 .actions {
   display: flex;
   justify-content: flex-end;
+  padding-top: 20px;
 }
