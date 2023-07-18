@@ -1,0 +1,12 @@
+.submit-form{
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    padding: 40px 50px;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid black;
+    z-index: 100;
+    gap: 30px;
+    width: 400px;
+}

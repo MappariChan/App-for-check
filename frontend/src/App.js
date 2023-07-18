@@ -3,6 +3,7 @@ import { RouterProvider, createBrowserRouter } from "react-router-dom";
 import Root from "./layouts/Root";
 import Group from "./pages/Group";
 import Checks from "./pages/Checks";
+import SignInModal from "./components/RegistrationModals/SignInModal";
 
 const router = createBrowserRouter([
   {
@@ -16,7 +17,8 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  return <RouterProvider router={router} />;
+  // return <RouterProvider router={router} />;
+  return <SignInModal/>
 };
 
 export default App;

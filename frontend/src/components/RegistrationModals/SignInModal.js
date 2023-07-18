@@ -1,7 +1,8 @@
 import {useState} from "react";
-import {TextField} from "@mui/material";
+import TextField from "@mui/material/TextField";
 import Button from "../../UI/Button";
 import axios from "axios";
+import classes from './AuthentificationModals.module.css'
 
 const SignInModal = (props) => {
     const [password, setPassword] = useState('')
@@ -31,13 +32,11 @@ const SignInModal = (props) => {
     const signUpDataInputHandler = (event) => {
         setSignInData(event.target.value)
     }
-    return <form onSubmit={validateSignInData}>
+    return <form onSubmit={validateSignInData} className={classes["submit-form"]}>
         <h2>Welcome</h2>
-        <TextField label='Email or Login' variant='standart' type='text' error='Incorrect username or email'
-                   onChange={signUpDataInputHandler}/>
-        <TextField label='Password' variant='standart' type='password' error='Incorrect password'
-                   onChange={passwordInputHandler}/>
-        <Button buttonText='Submit' type = 'submit'/>
+        <TextField type = "text" fullWidth label= "Email or Login" onChange={signUpDataInputHandler} variant='standard'/>
+        <TextField type = "password" fullWidth label='Password' onChange={passwordInputHandler} variant='standard'/>
+        <Button type = 'submit'>Submit</Button>
     </form>
 }
 
