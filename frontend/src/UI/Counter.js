@@ -10,7 +10,7 @@ const Counter = ({ onChange, value = 0 }) => {
     if (onChange) {
       onChange(count);
     }
-  }, count);
+  }, [count]);
 
   return (
     <div className={classes.container}>

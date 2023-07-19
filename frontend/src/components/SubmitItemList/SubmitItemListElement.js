@@ -1,5 +1,6 @@
 import { MdKeyboardArrowDown } from "react-icons/md";
 import { useState } from "react";
+import { useDispatch } from "react-redux";
 
 import Counter from "../../UI/Counter";
 
@@ -8,6 +9,12 @@ import Avatar from "../Avatar/Avatar";
 
 const SubmitItemListElement = ({ item, users }) => {
   const [isOppened, setIsOppened] = useState(false);
+  const dispathcer = useDispatch();
+
+  const splitButtonClickHandler = () => {
+    dispathcer({ type: "SPLIT_ITEM", item: item });
+    setIsOppened(false);
+  };
 
   return (
     <li className={classes.item + " " + classes["submit-item"]}>
@@ -18,6 +25,7 @@ const SubmitItemListElement = ({ item, users }) => {
         </div>
         <Counter />
       </div>
+
       <div
         className={`${classes["list-of-users"]} ${
           isOppened ? classes["oppened-list-of-users"] : ""
@@ -27,12 +35,14 @@ const SubmitItemListElement = ({ item, users }) => {
           <ul>
             {users.map((user) => (
               <li>
-                <Avatar username={user.username} />
+                <Avatar user={user} value={false} />
               </li>
             ))}
           </ul>
+          <button onClick={splitButtonClickHandler}>split</button>
         </div>
       </div>
+
       <div
         className={classes["lower-container"]}
         onClick={() => setIsOppened((prev) => !prev)}
