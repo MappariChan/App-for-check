@@ -14,9 +14,9 @@ const ModalSwitcher = (props) => {
         setCurrentModal('modalSignIn')
     }
 
-    return <Backdrop>
-        {currentModal === 'modalSignIn' && (<SignInModal/>)}
-        {currentModal === 'modalSignUp' && (<SignUpModal/>)}
+    return <Backdrop close={props.onClose}>
+        {currentModal === 'modalSignIn' && (<SignInModal openSignUpModal = {openSignUpModal} onClose = {props.onClose}/>)}
+        {currentModal === 'modalSignUp' && (<SignUpModal openSignInModal = {openSignInModal} onClose = {props.onClose}/>)}
     </Backdrop>
 }
 

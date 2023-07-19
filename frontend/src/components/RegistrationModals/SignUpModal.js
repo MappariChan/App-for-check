@@ -43,6 +43,7 @@ const SignUpModal = (props) => {
         <TextField type = "text" fullWidth label= "Email or Login" onChange={emailInputHandler} variant='standard'/>
         <TextField type = "password" fullWidth label='Password' onChange={passwordInputHandler} variant='standard'/>
         <Button type = 'submit'>Submit</Button>
+        <p>Have an account already? Go back <a onClick={props.openSignInModal} style = {{color: "#6638dd"}}>HERE</a></p>
     </form>
 }
 

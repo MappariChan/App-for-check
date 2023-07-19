@@ -24,7 +24,6 @@ const App = () => {
       <RouterProvider router={router} />
     </Provider>
   );
-  // return <SignInModal />;
 };
 
 export default App;
