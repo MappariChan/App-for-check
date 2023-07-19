@@ -10,6 +10,7 @@
 }
 
 .submit-form{
+    background-color: white;
     animation-name: appearance;
     animation-duration: 0.5s;
     animation-iteration-count: initial;

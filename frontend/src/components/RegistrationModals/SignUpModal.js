@@ -1,8 +1,8 @@
 import {useState} from "react";
-import {TextField} from "@mui/material";
 import Button from "../../UI/Button";
 import axios from "axios";
 import classes from './AuthentificationModals.module.css'
+import MuiInput from "../../UI/MuiInput";
 
 const SignUpModal = (props) => {
     const [password, setPassword] = useState('')
@@ -39,11 +39,14 @@ const SignUpModal = (props) => {
 
     return <form onSubmit={signUpUser} className={classes["submit-form"]}>
         <h2>Sign Up</h2>
-        <TextField type = "text" fullWidth label= "User name" onChange={usernameInputHandler} variant='standard'/>
-        <TextField type = "text" fullWidth label= "Email or Login" onChange={emailInputHandler} variant='standard'/>
-        <TextField type = "password" fullWidth label='Password' onChange={passwordInputHandler} variant='standard'/>
-        <Button type = 'submit'>Submit</Button>
-        <p>Have an account already? Go back <a onClick={props.openSignInModal} style = {{color: "#6638dd"}}>HERE</a></p>
+        <MuiInput accentColor="#6638dd" type="text" handler={usernameInputHandler} label="Enter username"/>
+        <MuiInput accentColor="#6638dd" type="email" handler={emailInputHandler} label="Enter email"/>
+        <MuiInput accentColor="#6638dd" type="password" handler={passwordInputHandler} label="Enter password"/>
+        <Button type='submit'>Submit</Button>
+        <p style={{fontSize: '12px'}}>Have an account already? Go back <a onClick={props.openSignInModal} style={{
+            color: "#6638dd",
+            cursor: "pointer"
+        }}>HERE</a></p>
     </form>
 }
 
