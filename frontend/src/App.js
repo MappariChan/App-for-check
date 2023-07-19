@@ -1,9 +1,11 @@
 import { RouterProvider, createBrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
 
 import Root from "./layouts/Root";
 import Group from "./pages/Group";
 import Checks from "./pages/Checks";
 import SignInModal from "./components/RegistrationModals/SignInModal";
+import store from "./store/store";
 
 const router = createBrowserRouter([
   {
@@ -17,7 +19,11 @@ const router = createBrowserRouter([
 ]);
 
 const App = () => {
-  return <SignInModal/>
+  return (
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
+  );
 };
 
 export default App;

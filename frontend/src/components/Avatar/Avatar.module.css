@@ -1,0 +1,23 @@
+.avatar {
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  background: #6638dd;
+}
+
+.username {
+  font-size: 12px;
+}
+
+.container {
+  height: 55px;
+  width: 55px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container:hover {
+  background: #ede9fe;
+}
