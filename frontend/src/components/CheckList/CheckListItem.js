@@ -1,16 +1,28 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
+import { useDispatch } from "react-redux";
 
+import CheckSubmitModal from "../CheckModal/CheckSubmitModal";
 import CheckModal from "../CheckModal/CheckModal";
 import Backdrop from "../../UI/Backdrop";
 
 import classes from "./CheckListItem.module.css";
 
 const CheckListItem = ({ check }) => {
-  const [isShown, setIsShown] = useState(false);
+  const [modalStage, setModalStage] = useState(0);
+  const dispathcer = useDispatch();
 
   const close = () => {
-    setIsShown(false);
+    dispathcer({ type: "CLEAR" });
+    setModalStage(0);
+  };
+
+  const prev = () => {
+    setModalStage((prev) => prev - 1);
+  };
+
+  const next = () => {
+    setModalStage((prev) => prev + 1);
   };
 
   return (
@@ -18,14 +30,27 @@ const CheckListItem = ({ check }) => {
       <div
         className={classes.cover}
         onClick={() => {
-          setIsShown(true);
+          setModalStage(1);
         }}
       ></div>
-      {isShown &&
+      {modalStage == 1 &&
         ReactDOM.createPortal(
           <>
             <Backdrop close={close} />
-            <CheckModal close={close} items={check.items} title={check.title} />
+            <CheckModal
+              close={close}
+              items={check.items}
+              title={check.title}
+              next={next}
+            />
+          </>,
+          document.getElementById("modal")
+        )}
+      {modalStage == 2 &&
+        ReactDOM.createPortal(
+          <>
+            <Backdrop close={close} />
+            <CheckSubmitModal close={close} title={check.title} prev={prev} />
           </>,
           document.getElementById("modal")
         )}

@@ -40,3 +40,64 @@
 .active {
   background-color: #6638dd;
 }
+
+.higher-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.submit-item {
+  display: block;
+}
+
+.submit-item:hover {
+  background: white;
+}
+
+.lower-container {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  user-select: none;
+}
+
+.lower-container p {
+  margin: 0;
+  font-size: 14px;
+}
+
+.list-of-users {
+  display: grid;
+  grid-template-rows: 0fr;
+  transition: grid-template-rows 300ms;
+}
+
+.list-of-users > div {
+  overflow: hidden;
+}
+
+.list-of-users ul {
+  display: flex;
+  flex-direction: row;
+  margin: 10px;
+  padding: 0;
+  list-style: none;
+  overflow-x: auto;
+}
+
+.oppened-list-of-users {
+  grid-template-rows: 1fr;
+}
+
+.oc-arrow {
+  transition: transform 300ms;
+  transform: rotate(0deg);
+}
+
+.oppened-arrow {
+  transform: rotate(180deg);
+}

@@ -32,4 +32,5 @@
   display: flex;
   justify-content: flex-end;
   padding-top: 20px;
+  gap: 5px;
 }
