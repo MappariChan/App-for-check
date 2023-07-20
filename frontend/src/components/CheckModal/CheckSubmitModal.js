@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
-import Button from "../../UI/Button";
 import SubmitItemList from "../SubmitItemList/SubmitItemList";
 
 import classes from "./CheckModal.module.css";
+import MuiButton from "../../UI/MuiButton";
 
 const CheckSubmitModal = ({ close, title, prev }) => {
   const selectedItems = useSelector((state) => state.selectedItems);
@@ -17,8 +17,8 @@ const CheckSubmitModal = ({ close, title, prev }) => {
       <p>Choose amount</p>
       <SubmitItemList allItems={allItems} />
       <div className={classes.actions}>
-        <Button onClick={prev}>Back</Button>
-        <Button onClick={close}>Next</Button>
+        <MuiButton onClick={prev} accentColor = "#6638dd" type = "submit">Back</MuiButton>
+        <MuiButton onClick={close} accentColor = "#6638dd" type = "submit">Next</MuiButton>
       </div>
     </div>
   );

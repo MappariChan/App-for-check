@@ -3,6 +3,7 @@ import Button from "../../UI/Button";
 import axios from "axios";
 import classes from './AuthentificationModals.module.css'
 import MuiInput from "../../UI/MuiInput";
+import MuiButton from "../../UI/MuiButton";
 
 const SignUpModal = (props) => {
     const [password, setPassword] = useState('')
@@ -42,7 +43,7 @@ const SignUpModal = (props) => {
         <MuiInput accentColor="#6638dd" type="text" handler={usernameInputHandler} label="Enter username"/>
         <MuiInput accentColor="#6638dd" type="email" handler={emailInputHandler} label="Enter email"/>
         <MuiInput accentColor="#6638dd" type="password" handler={passwordInputHandler} label="Enter password"/>
-        <Button type='submit'>Submit</Button>
+        <MuiButton type="submit" accentColor="#6638dd"> Submit </MuiButton>
         <p style={{fontSize: '12px'}}>Have an account already? Go back <a onClick={props.openSignInModal} style={{
             color: "#6638dd",
             cursor: "pointer"

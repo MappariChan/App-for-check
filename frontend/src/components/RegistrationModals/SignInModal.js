@@ -3,6 +3,7 @@ import Button from "../../UI/Button";
 import axios from "axios";
 import classes from './AuthentificationModals.module.css'
 import MuiInput from "../../UI/MuiInput";
+import MuiButton from "../../UI/MuiButton";
 
 const SignInModal = (props) => {
     const [password, setPassword] = useState('')
@@ -39,7 +40,7 @@ const SignInModal = (props) => {
         <h2>Welcome Back</h2>
         <MuiInput accentColor="#6638dd" type="text" handler={signUpDataInputHandler} label="Enter login or username"/>
         <MuiInput accentColor="#6638dd" type="password" handler={passwordInputHandler} label="Enter password"/>
-        <Button type='submit'>Submit</Button>
+        <MuiButton type="submit" accentColor="#6638dd"> Submit </MuiButton>
         <p style={{fontSize: '12px'}}>No account? You can always create a new one <a onClick={props.openSignUpModal}
                                                                                      style={{
                                                                                          color: "#6638dd",

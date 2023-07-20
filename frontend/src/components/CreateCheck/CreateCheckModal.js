@@ -1,8 +1,7 @@
 import classes from '../RegistrationModals/AuthentificationModals.module.css'
 import MuiInput from "../../UI/MuiInput";
-import MuiInputAmount from "../../UI/MuiInputAmount";
+import NewCheckItem from "../../UI/NewCheckItem";
 import {useState} from "react";
-import Button from "../../UI/Button";
 
 const CreateCheckModal = () => {
 
@@ -17,8 +16,7 @@ const CreateCheckModal = () => {
         <h3>Check title</h3>
         <MuiInput label="Check Title" accentColor="#6638dd" type="text" handler={titleInputHandler}/>
         <h3>Check Options</h3>
-        <MuiInputAmount color="#6638dd" amountHandler = {setAmount}/>
-        <Button>+</Button>
+        <NewCheckItem color="#6638dd"/>
     </form>
 }
 
