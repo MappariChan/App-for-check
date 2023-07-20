@@ -1,19 +1,19 @@
 .container {
-    display: grid;
-    justify-content: center;
-    align-items: center;
-    grid-template-columns: 1fr 1fr 30px 30px;
-    gap: 15px;
-    width: 100%;
+  display: grid;
+  justify-content: center;
+  align-items: center;
+  grid-template-columns: 1fr 1fr 30px 30px;
+  gap: 15px;
+  width: 100%;
 }
 
 .circle {
-    height: 30px;
-    width: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 50%;
-    background-color:#ede9fe;
-    transition: background-color 200ms;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #ede9fe;
+  transition: background-color 200ms;
 }

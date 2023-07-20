@@ -37,7 +37,7 @@ const SubmitItemListElement = ({ item, users }) => {
             <ul>
               {users.map((user) => (
                 <li>
-                  <Avatar user={user} value={false} />
+                  <Avatar itemId={item.id} user={user} value={false} />
                 </li>
               ))}
             </ul>

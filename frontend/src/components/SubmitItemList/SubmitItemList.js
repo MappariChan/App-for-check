@@ -13,9 +13,12 @@ const SubmitItemList = ({ allItems }) => {
   return (
     <ul className={classes.list}>
       {allItems.map((item) => {
-        if (item.users) {
+        if (item.usersOfItem) {
           return (
-            <SubmitItemListSplitedElement item={item.item} users={item.users} />
+            <SubmitItemListSplitedElement
+              item={item.item}
+              users={item.usersOfItem}
+            />
           );
         } else {
           return <SubmitItemListElement item={item} users={users} />;

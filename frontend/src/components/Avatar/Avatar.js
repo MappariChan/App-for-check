@@ -3,16 +3,20 @@ import { useDispatch } from "react-redux";
 
 import classes from "./Avatar.module.css";
 
-const Avatar = ({ user, value }) => {
+const Avatar = ({ user, value, itemId }) => {
   const [isSelected, setIsSelected] = useState(value);
   const dispatcher = useDispatch();
 
   const selectHandler = () => {
     setIsSelected((prev) => {
       if (!prev) {
-        dispatcher({ type: "ADD_USER_TO_SPLIT", user: user });
+        dispatcher({ type: "ADD_USER_TO_SPLIT", user: user, itemId: itemId });
       } else {
-        dispatcher({ type: "REMOVE_USER_FROM_SPLIT", id: user.id });
+        dispatcher({
+          type: "REMOVE_USER_FROM_SPLIT",
+          userId: user.id,
+          itemId: itemId,
+        });
       }
       return !prev;
     });
