@@ -73,14 +73,18 @@
 .list-of-users {
   display: grid;
   grid-template-rows: 0fr;
-  transition: grid-template-rows 300ms;
+  transition: grid-template-rows 500ms;
 }
 
 .list-of-users > div {
   overflow: hidden;
+}
+
+.list-of-users > div > div {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   gap: 5px;
 }
 
@@ -90,7 +94,8 @@
   padding: 0;
   list-style: none;
   overflow-x: auto;
-  margin-block: 10px;
+  overflow-y: hidden;
+  margin-top: 10px;
 }
 
 .list-of-users button {
@@ -98,9 +103,10 @@
   color: white;
   background: #6638dd;
   font-size: 16px;
-  padding-block: 10px;
   border-radius: 3px;
   transition: background 200ms;
+  padding: 5px 20px;
+  margin-bottom: 15px;
 }
 
 .list-of-users button:active {

@@ -6,6 +6,7 @@ import Counter from "../../UI/Counter";
 
 import classes from "../ItemList/ItemListElement.module.css";
 import Avatar from "../Avatar/Avatar";
+import Button from "../../UI/Button";
 
 const SubmitItemListElement = ({ item, users }) => {
   const [isOppened, setIsOppened] = useState(false);
@@ -32,14 +33,17 @@ const SubmitItemListElement = ({ item, users }) => {
         }`}
       >
         <div>
-          <ul>
-            {users.map((user) => (
-              <li>
-                <Avatar user={user} value={false} />
-              </li>
-            ))}
-          </ul>
-          <button onClick={splitButtonClickHandler}>split</button>
+          <div>
+            <ul>
+              {users.map((user) => (
+                <li>
+                  <Avatar user={user} value={false} />
+                </li>
+              ))}
+            </ul>
+            {/* <Button onClick={splitButtonClickHandler}>split</Button> */}
+            <button onClick={splitButtonClickHandler}>split</button>
+          </div>
         </div>
       </div>
 
@@ -47,7 +51,7 @@ const SubmitItemListElement = ({ item, users }) => {
         className={classes["lower-container"]}
         onClick={() => setIsOppened((prev) => !prev)}
       >
-        <p>spilt with someone</p>
+        <p>split with someone</p>
         <MdKeyboardArrowDown
           className={`${classes["oc-arrow"]} ${
             isOppened ? classes["oppened-arrow"] : ""
